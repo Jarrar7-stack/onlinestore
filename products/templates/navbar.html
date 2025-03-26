@@ -1,0 +1,41 @@
+<!-- navbar.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* CSS for the navbar is added here */
+        /* Flexbox Navbar Styling */
+.navbar {
+    display: flex; /* Use Flexbox layout */
+    justify-content: space-between; /* Space out links evenly */
+    background-color: #333; /* Dark background color */
+    padding: 10px 20px; /* Spacing inside the navbar */
+}
+
+.navbar a {
+    color: white; /* Link text color */
+    text-decoration: none; /* Remove underline from links */
+    padding: 8px 15px; /* Add padding around links */
+    font-size: 16px; /* Adjust font size */
+}
+
+.navbar a:hover {
+    background-color: #575757; /* Background color on hover */
+    border-radius: 4px; /* Rounded edges on hover */
+}
+
+.logout-button {
+    color: red; /* Highlight logout button in red */
+    font-weight: bold; /* Make it bold for emphasis */
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about_us' %}">About Us</a>
+        <a href="{% url 'product_list' %}">Products</a>
+        <a href="{% url 'logout' %}" class="logout-button">Logout</a>
+    </nav>
+</body>
+</html>
