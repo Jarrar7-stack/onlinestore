@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Arrivals</title>
+</head>
+<body>
+    <h1>New Arrivals</h1>
+    <ul>
+        {% for product in new_products %}
+            <li>
+                <h2>{{ product.name }}</h2>
+                <p>{{ product.description }}</p>
+                <p>Price: ${{ product.price }}</p>
+                <p>Added On: {{ product.created_at }}</p>
+            </li>
+        {% empty %}
+            <p>No new arrivals at the moment!</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>

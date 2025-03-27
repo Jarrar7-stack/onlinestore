@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+<body>
+    <h1>welcome to ward store</h1>
+    <a href="{% url 'signin' %}">sign in</a>
+    <a href="{% url 'signup' %}">sign up</a>
+    <h2>our products</h2>
+    <ul>
+        {% for product in products %}
+            <li>
+                <h2>{{ product.name }}</h2>
+                <p>{{ product.description }}</p>
+                <p>price: {{ product.price }}</p>
+                <p>in stock: {{ product.stock }}</p>
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" style="width:200px; height:auto;">
+                {% else %}
+                <p>No image available for this product.</p>
+                {% endif %}
+
+            </li>
+        {% empty %}
+            <p>no products available</p>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
